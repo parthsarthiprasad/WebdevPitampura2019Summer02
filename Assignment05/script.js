@@ -23,23 +23,48 @@ for(var i = 0;i<=counter;i++){
         if(s == "none")
         {
             document.getElementById(i).style.textDecoration = "line-through"
+            document.getElementById(i).setAttribute("class", "striked")
         }
         else {document.getElementById(i).style.textDecoration = "none"}
     }
 }
 
-function remove(){
-    console.log("clicked")
-    for(var i = 1; i<=counter;i++){
-        if(document.getElementById(i) == "null"){}
-        else{
-            var s = document.getElementById(i).style.textDecoration;
-            if(s == "line-through")
-            {
-                document.getElementById("list").removeChild(list.childNodes[i]);
-            }   
-        }
+//function remove(){
+//    console.log("clicked")
+//    var list = document.getElementById("list");
+//    for(var i = 1; i<=list.childElementCount;i++){
+//        if(document.getElementById(i) == "null"){ }
+//        else{
+//            var s = document.getElementById("list").chi.style.textDecoration;
+//            if(s == "line-through")
+//            {
+//                document.getElementById("list").removeChild(list.childNodes[i]);
+//                console.log(counter)
+//            }   
+//        }
+//    }
+//}
+
+//
+//function remove(){
+//    var list = document.getElementById("list");
+//    while(list.hasChildNodes){
+//        let i = 0;
+//        while (i<list.childElementCount) {
+//            if (list.children[i].style.textDecoration === 'line-through'){
+//                list.removeChild(list.children[i])
+//            }else{
+//                i++;
+//            }
+//        }
+//    }
+//}
+
+function remove() {
+    var striked = document.getElementsByClassName('striked');
+    console.log(striked)
+    for(var i=0; i<striked.length; i++){
+        striked[i].parentNode.removeChild(striked[i])
+        i=-1;
     }
 }
-
-
